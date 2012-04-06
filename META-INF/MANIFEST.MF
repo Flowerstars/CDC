@@ -1,0 +1,68 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: 1.6.0_29 (Apple Inc.)
+Built-By: simonetripodi
+Build-Jdk: 1.6.0_29
+Specification-Title: MyBatis
+Specification-Version: 3.1.0
+Specification-Vendor: MyBatis.org
+Implementation-Title: MyBatis
+Implementation-Version: 3.1.0
+Implementation-Vendor-Id: org.mybatis
+Implementation-Vendor: MyBatis.org
+Implementation-Build: tags/mybatis-3.1.0@r4862; 2012-03-11 22:41:58+0100
+X-Compile-Source-JDK: 1.5
+X-Compile-Target-JDK: 1.5
+Export-Package: org.apache.ibatis.mapping;version="3.1.0",org.apache.i
+ batis.metadata;version="3.1.0",org.apache.ibatis.cache.decorators;ver
+ sion="3.1.0",org.apache.ibatis.exceptions;version="3.1.0",org.apache.
+ ibatis.logging.nologging;version="3.1.0",org.apache.ibatis.plugin;ver
+ sion="3.1.0",org.apache.ibatis.datasource.jndi;version="3.1.0",org.ap
+ ache.ibatis.datasource.pooled;version="3.1.0",org.apache.ibatis.type;
+ version="3.1.0",org.apache.ibatis.executor.loader;version="3.1.0",org
+ .apache.ibatis.builder.xml.dynamic;version="3.1.0",org.apache.ibatis.
+ cache.impl;version="3.1.0",org.apache.ibatis.cache;version="3.1.0",or
+ g.apache.ibatis.binding;version="3.1.0",org.apache.ibatis.reflection.
+ wrapper;version="3.1.0",org.apache.ibatis.transaction.jdbc;version="3
+ .1.0",org.apache.ibatis.reflection.factory;version="3.1.0",org.apache
+ .ibatis.builder.annotation;version="3.1.0",org.apache.ibatis.logging.
+ jdk14;version="3.1.0",org.apache.ibatis.annotations;version="3.1.0",o
+ rg.apache.ibatis.logging.jdbc;version="3.1.0",org.apache.ibatis.execu
+ tor;version="3.1.0",org.apache.ibatis.logging.log4j;version="3.1.0",o
+ rg.apache.ibatis.logging.commons;version="3.1.0",org.apache.ibatis.re
+ flection.property;version="3.1.0",org.apache.ibatis.reflection.invoke
+ r;version="3.1.0",org.apache.ibatis.ognl;version="3.1.0",org.apache.i
+ batis.transaction.managed;version="3.1.0",org.apache.ibatis.parsing;v
+ ersion="3.1.0",org.apache.ibatis.executor.result;version="3.1.0",org.
+ apache.ibatis.transaction;version="3.1.0",org.apache.ibatis.datasourc
+ e.unpooled;version="3.1.0",org.apache.ibatis.executor.parameter;versi
+ on="3.1.0",org.apache.ibatis.executor.keygen;version="3.1.0",org.apac
+ he.ibatis.logging;version="3.1.0",org.apache.ibatis.logging.stdout;ve
+ rsion="3.1.0",org.apache.ibatis.builder.xml;version="3.1.0",org.apach
+ e.ibatis.session;version="3.1.0",org.apache.ibatis.jdbc;version="3.1.
+ 0",org.apache.ibatis.executor.statement;version="3.1.0",org.apache.ib
+ atis.session.defaults;version="3.1.0",org.apache.ibatis.io;version="3
+ .1.0",org.apache.ibatis.reflection;version="3.1.0",org.apache.ibatis.
+ executor.resultset;version="3.1.0",org.apache.ibatis.logging.slf4j;ve
+ rsion="3.1.0",org.apache.ibatis.builder;version="3.1.0",org.apache.ib
+ atis.datasource;version="3.1.0"
+Tool: Bnd-0.0.357
+Bundle-Name: MyBatis
+Bundle-Vendor: MyBatis.org
+DynamicImport-Package: *
+Bundle-Version: 3.1.0
+Bnd-LastModified: 1331502132919
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-Description: The MyBatis data mapper framework makes it easier 
+ to use a relational database with object-oriented    applications. My
+ Batis couples objects with stored procedures or SQL statements using 
+ a XML descriptor or    annotations. Simplicity is the biggest advanta
+ ge of the MyBatis data mapper over object relational mapping    tools.
+Import-Package: javax.naming,javax.sql,javax.xml.namespace,javax.xml.p
+ arsers,javax.xml.xpath,net.sf.cglib.proxy;resolution:=optional,org.ap
+ ache.commons.logging;resolution:=optional,org.apache.log4j;resolution
+ :=optional,org.slf4j;resolution:=optional,org.w3c.dom,org.xml.sax
+Bundle-SymbolicName: org.mybatis.mybatis
+Bundle-DocURL: http://www.mybatis.org/core/
+

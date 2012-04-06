@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<typeAliases>
+		<typeAlias alias="Users" type="com.discount.model.Users"/>
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+		  <transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://ec2-50-18-17-238.us-west-1.compute.amazonaws.com:3306/CDC"/>
+				<property name="username" value="root"/>
+				<property name="password" value="RooT"/>
+			</dataSource>
+	   </environment>
+	</environments>
+	
+    <mappers>
+  	   <mapper resource="com/discount/data/Users.xml"/>
+    </mappers>
+
+</configuration>
