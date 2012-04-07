@@ -2,15 +2,22 @@ package com.discount.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.discount.model.Merchants;
 import com.discount.model.Users;
+import com.discount.model.Deals;
+import com.discount.DAO.MerchantsDAO;
 import com.discount.DAO.UsersDAO;
+import com.discount.DAO.DealsDAO;
 
+
+@SuppressWarnings("serial")
 public class TestServlet extends HttpServlet {
 
 	/**
@@ -44,9 +51,10 @@ public class TestServlet extends HttpServlet {
 		out.flush();
 		out.close();
 		*/
-		UsersDAO UserDAO = new UsersDAO();
-		//Contact actual = new Contact(3, "Contact2Updated", "(646) 709-6724", "contact1updated@loianetest.com");
 		
+		//Contact actual = new Contact(3, "Contact2Updated", "(646) 709-6724", "contact1updated@loianetest.com");
+/*	
+  		UsersDAO UserDAO = new UsersDAO();	
 		Users user = UserDAO.selectById(3);
 		System.out.println("[songhan]: user: " + user.toString());
 		user.setName("Beijing");
@@ -56,6 +64,77 @@ public class TestServlet extends HttpServlet {
 		user.setNotifications("2,5,8");
 		user.setFollowedMerchants("11,22,33");
 		UserDAO.update(user);	
+*/		
+		
+		PrintWriter out;
+		response.setContentType("text/html");
+		
+		try {
+			out = response.getWriter();
+			out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+			out.println("<HTML>");
+			out.println("<HEAD><TITLE>Dtabase Info Page</TITLE></HEAD>");
+			out.println("<BODY>");
+			out.println("<h2>Database Information:</h2>");
+			
+			printAllUsers(out);
+			printAllDeals(out);
+			printAllMerchants(out);
+			
+			out.println("  </BODY>");
+			out.println("</HTML>");
+			
+			out.flush();
+			out.close();
+		}catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
+	
+	
+	private void printAllUsers(PrintWriter out){
+		
+		UsersDAO userDAO = new UsersDAO();
+		List<Users> allUsers = userDAO.selectAll();	
+			
+		out.println("<h4>Users:</h4>");
+		for (int i=0; i<allUsers.size(); i++){
+			out.println("Index "+ (i+1) +": ");
+			out.println(allUsers.get(i).toString());
+			out.println("<br />");
+		}
+		out.println("=============================================");
+		out.println("<br />");
+	}
+	
+	private void printAllDeals(PrintWriter out){
+		DealsDAO dealsDAO = new DealsDAO();
+		List<Deals> allDeals = dealsDAO.selectAll();	
+			
+		out.println("<h4>Deals:</h4>");
+		for (int i=0; i<allDeals.size(); i++){
+			out.println("Index "+ (i+1) +": ");
+			out.println(allDeals.get(i).toString());
+			out.println("<br />");
+		}
+		out.println("=============================================");
+		out.println("<br />");
+	}
+	
 
+	
+	private void printAllMerchants(PrintWriter out){
+		MerchantsDAO merchantsDAO = new MerchantsDAO();
+		List<Merchants> allMerchants = merchantsDAO.selectAll();	
+			
+		out.println("<h4>Merchants:</h4>");
+		for (int i=0; i<allMerchants.size(); i++){
+			out.println("Index "+ (i+1) +": ");
+			out.println(allMerchants.get(i).toString());
+			out.println("<br />");
+		}
+		out.println("=============================================");
+		out.println("<br />");
+	}
 }

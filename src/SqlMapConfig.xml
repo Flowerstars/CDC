@@ -7,6 +7,8 @@
 
 	<typeAliases>
 		<typeAlias alias="Users" type="com.discount.model.Users"/>
+		<typeAlias alias="Deals" type="com.discount.model.Deals"/>
+		<typeAlias alias="Merchants" type="com.discount.model.Merchants"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -23,6 +25,8 @@
 	
     <mappers>
   	   <mapper resource="com/discount/data/Users.xml"/>
+  	   <mapper resource="com/discount/data/Deals.xml"/>
+  	   <mapper resource="com/discount/data/Merchants.xml"/>
     </mappers>
 
 </configuration>
