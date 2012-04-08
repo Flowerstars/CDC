@@ -21,11 +21,11 @@
     </select>
     
     <select id="getById" parameterType="int" resultMap="result">
-    	SELECT * FROM deals WHERE id = #{dealId};
+    	SELECT * FROM deals WHERE deal_id = #{dealId};
   	</select>
     
     <delete id="deleteById" parameterType="int">
-    	DELETE from deals WHERE id = #{dealId};
+    	DELETE from deals WHERE deal_id = #{dealId};
     </delete>
 
     <insert id="insert" parameterType="Deals">
@@ -45,7 +45,7 @@
 			deal_name = #{dealName},
 			discount = #{discount},
 			deal_info = #{dealInfo},
-		WHERE id = #{dealId};
+		WHERE deal_id = #{dealId};
 	</update>
 
 </mapper>

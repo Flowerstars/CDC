@@ -10,9 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.discount.model.Merchants;
+import com.discount.model.Pictures;
 import com.discount.model.Users;
 import com.discount.model.Deals;
 import com.discount.DAO.MerchantsDAO;
+import com.discount.DAO.PicturesDAO;
 import com.discount.DAO.UsersDAO;
 import com.discount.DAO.DealsDAO;
 
@@ -80,6 +82,7 @@ public class TestServlet extends HttpServlet {
 			printAllUsers(out);
 			printAllDeals(out);
 			printAllMerchants(out);
+			printAllPictures(out);
 			
 			out.println("  </BODY>");
 			out.println("</HTML>");
@@ -132,6 +135,20 @@ public class TestServlet extends HttpServlet {
 		for (int i=0; i<allMerchants.size(); i++){
 			out.println("Index "+ (i+1) +": ");
 			out.println(allMerchants.get(i).toString());
+			out.println("<br />");
+		}
+		out.println("=============================================");
+		out.println("<br />");
+	}
+	
+	private void printAllPictures(PrintWriter out){
+		PicturesDAO picturesDAO = new PicturesDAO();
+		List<Pictures> allPictures = picturesDAO.selectAll();	
+			
+		out.println("<h4>Pictures:</h4>");
+		for (int i=0; i<allPictures.size(); i++){
+			out.println("Index "+ (i+1) +": ");
+			out.println(allPictures.get(i).toString());
 			out.println("<br />");
 		}
 		out.println("=============================================");
