@@ -6,10 +6,13 @@
 <mapper namespace="Deals">
 	
 	<resultMap id="result" type="Deals">
-	    <result property="id" column="id"/>
-	    <result property="dealname" column="dealname"/>
-	    <result property="merchantId" column="merchant_id"/>
-	    <result property="dealInfos" column="deal_infos"/>
+	    <result property="dealId" column="deal_id"/>
+	    <result property="catId" column="cat_id"/>
+	    <result property="merId" column="mer_id"/>
+	    <result property="picId" column="pic_id"/>
+	    <result property="dealName" column="dea_lname"/>
+	    <result property="discount" column="discount"/>
+	    <result property="dealInfo" column="deal_info"/>
 	    <result property="createAt" column="created_at"/>
     </resultMap>
 	
@@ -18,28 +21,31 @@
     </select>
     
     <select id="getById" parameterType="int" resultMap="result">
-    	SELECT * FROM deals WHERE id = #{id};
+    	SELECT * FROM deals WHERE id = #{dealId};
   	</select>
     
     <delete id="deleteById" parameterType="int">
-    	DELETE from deals WHERE id = #{id};
+    	DELETE from deals WHERE id = #{dealId};
     </delete>
 
     <insert id="insert" parameterType="Deals">
-    INSERT INTO deals (dealname, merchant_id, deal_infos) 
-		VALUES (#{dealname}, #{merchantId}, #{dealInfos});
+    INSERT INTO deals (cat_id, mer_id, pic_id, deal_name, discount, deal_info) 
+		VALUES (#{catId}, #{merId}, #{picId}, #{dealName}, #{discount}, #{dealInfo});
       <selectKey keyProperty="id" resultType="int" order="AFTER">
-		select last_insert_id() as id
+		select last_insert_id() as deal_id
 	  </selectKey>
     </insert>
 
 	<update id="update" parameterType="Deals">
 	  	UPDATE deals
 		SET
-			dealname = #{dealname},
-			merchant_id = #{merchantId},
-			dealinfos = #{dealInfos},
-		WHERE id = #{id};
+			cat_id = #{catId},
+			mer_id = #{merId},
+			pic_id = #{picId},
+			deal_name = #{dealName},
+			discount = #{discount},
+			deal_info = #{dealInfo},
+		WHERE id = #{dealId};
 	</update>
 
 </mapper>

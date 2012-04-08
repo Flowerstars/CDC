@@ -9,73 +9,109 @@ package com.discount.model;
  */
 public class Merchants {
 	
-	private int id;
-	private String merchantname;
-	private String merchantInfos;
-	private String location;
+	private int merId;
+	private int picId;
+	private String merName;
+	private String merInfo;
+	private double locationLong;
+	private double locationLat;
+	private String dealHistory;
 	
-	public Merchants(int id, String merchantname, String merchantInfos, String location) {
+	public Merchants(int merId, int picId, String merName, String merInfo, double locationLong, double locationLat, String dealHistory) {
 		super();
-		this.id = id;
-		this.merchantname = merchantname;
-		this.merchantInfos = merchantInfos;
-		this.location = location;
+		this.merId = merId;
+		this.picId = picId;
+		this.merName = merName;
+		this.merInfo = merInfo;
+		this.locationLong = locationLong;
+		this.locationLat = locationLat;
+		this.dealHistory = dealHistory;
 	}
 	
 	public Merchants() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public int getId() {
-		return id;
+	public int getMerId() {
+		return merId;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
+	public void setMerId(int merId) {
+		this.merId = merId;
 	}
 	
-	public String getMerchantName() {
-		return merchantname;
+	public int getPicId() {
+		return picId;
 	}
 	
-	public void setMerchantName(String merchantname) {
-		this.merchantname = merchantname;
+	public void setPicId(int picId) {
+		this.picId = picId;
+	}
+	
+	public String getMerName() {
+		return merName;
+	}
+	
+	public void setMerName(String merName) {
+		this.merName = merName;
 	}	
 	
-	public String getMerchantInfos() {
-		return merchantInfos;
+	public String getMerInfo() {
+		return merInfo;
 	}
 	
-	public void setMerchantInfos(String merchantInfos) {
-		this.merchantInfos = merchantInfos;
+	public void setMerInfo(String merInfo) {
+		this.merInfo = merInfo;
 	}
 	
-	public String getLocation() {
-		return location;
+	public double getLocationLong() {
+		return locationLong;
 	}
 	
-	public void setLocation(String location) {
-		this.location = location;
+	public void setLocationLong(double locationLong) {
+		this.locationLong = locationLong;
+	}
+	
+	public double getLocationLat() {
+		return locationLat;
+	}
+	
+	public void setLocationLat(double locationLat) {
+		this.locationLat = locationLat;
+	}
+	
+	public String getDealHistory() {
+		return dealHistory;
+	}
+	
+	public void setDealHistory(String dealHistory) {
+		this.dealHistory = dealHistory;
 	}
 	
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
-		sb.append("Id = ").append(id).append(" - ");
-		sb.append("Merchantname = ").append(merchantname).append(" - ");
-		sb.append("MerchantInfos = ").append(merchantInfos).append(" - ");
-		sb.append("Location = ").append(location);
+		sb.append("mer_id = ").append(merId).append(" - ");
+		sb.append("pic_id = ").append(picId).append(" - ");
+		sb.append("mer_name = ").append(merName).append(" - ");
+		sb.append("mer_info = ").append(merInfo).append(" - ");
+		sb.append("location_long = ").append(locationLong);
+		sb.append("location_lat = ").append(locationLat);
+		sb.append("deal_history = ").append(dealHistory);
 		return sb.toString();
 	}
 	
 	public boolean equals(Object obj) {  
 		Merchants merchant = (Merchants) obj;
-		if (this.id != merchant.id){
+		if (this.merId != merchant.merId){
 			return false;
 		}
-		if (!this.merchantname.equals(merchant.getMerchantName())){
+		if (!this.merName.equals(merchant.getMerName())){
 			return false;
 		}
-		if (!this.location.equals(merchant.getLocation())){
+		if (this.locationLong != merchant.getLocationLong()){
+			return false;
+		}
+		if (this.locationLat != merchant.getLocationLat()){
 			return false;
 		}
 

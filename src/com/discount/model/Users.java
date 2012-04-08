@@ -9,45 +9,45 @@ package com.discount.model;
  *
  */
 public class Users {
-	private int id;
-	private String username;
+	private int uId;
+	private String userName;
 	private String password;
 	private String email;
-	private String location;
+	private double locationLong;
+	private double locationLat;
 	private String notifications;
-	private String followedMerchants;
 	private String createAt;
 	
 	
-	public Users(int id, String username, String password, String email, String location, String notifications, String followedMerchants, String createAt) {
+	public Users(int uId, String userName, String password, String email, double locationLong, double locationLat, String notifications, String createAt) {
 		super();
-		this.id = id;
-		this.username = username;
+		this.uId = uId;
+		this.userName = userName;
 		this.password = password;
 		this.email = email;
-		this.location = location;
+		this.locationLong = locationLong;
+		this.locationLat = locationLat;
 		this.notifications = notifications;
-		this.followedMerchants = followedMerchants;
 		this.createAt = createAt;
 	}
 	
 	public Users() {}
 
 
-	public int getId() {
-		return id;
+	public int getUId() {
+		return uId;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int uId) {
+		this.uId = uId;
 	}
 	
-	public String getName() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 	
-	public void setName(String username) {
-		this.username = username;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	
 	public String getPassword() {
@@ -66,12 +66,20 @@ public class Users {
 		this.email = email;
 	}
 	
-	public String getLocation() {
-		return location;
+	public double getLocationLong() {
+		return locationLong;
 	}
 	
-	public void setLocation(String location) {
-		this.location = location;
+	public void setLocationLong(double locationLong) {
+		this.locationLong = locationLong;
+	}
+	
+	public double getLocationLat() {
+		return locationLat;
+	}
+	
+	public void setLocationLat(double locationLat) {
+		this.locationLat = locationLat;
 	}
 	
 	public String getNotifications() {
@@ -80,14 +88,6 @@ public class Users {
 	
 	public void setNotifications(String notifications) {
 		this.notifications = notifications;
-	}
-	
-	public String getFollowedMerchants() {
-		return followedMerchants;
-	}
-	
-	public void setFollowedMerchants(String followedMerchants) {
-		this.followedMerchants = followedMerchants;
 	}
 	
 	public String getTimeStamp() {
@@ -100,23 +100,22 @@ public class Users {
 	
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
-		sb.append("Id = ").append(id).append(" - ");
-		sb.append("Username = ").append(username).append(" - ");
+		sb.append("u_id = ").append(uId).append(" - ");
+		sb.append("user_name = ").append(userName).append(" - ");
 		sb.append("Password = ").append(password).append(" - ");
 		sb.append("Email = ").append(email).append(" - ");
-		sb.append("Location = ").append(location).append(" - ");
+		sb.append("Location = (").append(locationLong).append(", ").append(locationLat).append(")").append(" - ");
 		sb.append("Notifications = ").append(notifications).append(" - ");
-		sb.append("FollowedMerchants = ").append(followedMerchants).append(" - ");
 		sb.append("CreateAt = ").append(createAt);
 		return sb.toString();
 	}
 	
 	public boolean equals(Object obj) {  
 		Users user = (Users) obj;
-		if (this.id != user.id){
+		if (this.uId != user.uId){
 			return false;
 		}
-		if (!this.username.equals(user.getName())){
+		if (!this.userName.equals(user.getUserName())){
 			return false;
 		}
 		if (!this.email.equals(user.getEmail())){

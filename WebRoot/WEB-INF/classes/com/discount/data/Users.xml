@@ -6,13 +6,13 @@
 <mapper namespace="Users">
 	
 	<resultMap id="result" type="Users">
-	    <result property="id" column="id"/>
-	    <result property="username" column="username"/>
+	    <result property="uId" column="u_id"/>
+	    <result property="userName" column="user_name"/>
 	    <result property="password" column="password"/>
 	    <result property="email" column="email"/>
-	    <result property="location" column="location"/>
+	    <result property="locationLong" column="location_long"/>
+	    <result property="locationLat" column="location_lat"/>
 	    <result property="notifications" column="notifications"/>
-	    <result property="followedMerchants" column="followed_merchants"/>
 	    <result property="createAt" column="created_at"/>
     </resultMap>
 	
@@ -21,30 +21,30 @@
     </select>
     
     <select id="getById" parameterType="int" resultMap="result">
-    	SELECT * FROM users WHERE id = #{id};
+    	SELECT * FROM users WHERE id = #{uId};
   	</select>
     
     <delete id="deleteById" parameterType="int">
-    	DELETE from users WHERE id = #{id};
+    	DELETE from users WHERE id = #{uId};
     </delete>
 
     <insert id="insert" parameterType="Users">
-    INSERT INTO users (username, password, email, location, notifications, followed_merchants) 
-		VALUES (#{username}, #{password}, #{email}, #{location}, #{notifications}, #{followedMerchants});
+    INSERT INTO users (user_name, password, email, location_long, location_lat, notifications) 
+		VALUES (#{userName}, #{password}, #{email}, #{locationLong}, #{locationLat},  #{notifications});
       <selectKey keyProperty="id" resultType="int" order="AFTER">
-		select last_insert_id() as id
+		select last_insert_id() as u_id
 	  </selectKey>
     </insert>
 
 	<update id="update" parameterType="Users">
 	  	UPDATE users
 		SET
-			username = #{username},
+			userName = #{user_name},
 			password = #{password},
 			email = #{email},
-			location = #{location},
+			locationLong = #{location_long},
+			locationLat = #{location_lat},
 			notifications = #{notifications},
-			followed_merchants = #{followedMerchants}
 		WHERE id = #{id};
 	</update>
 

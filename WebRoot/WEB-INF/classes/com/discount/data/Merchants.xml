@@ -6,10 +6,13 @@
 <mapper namespace="Merchants">
 	
 	<resultMap id="result" type="Merchants">
-	    <result property="id" column="id"/>
-	    <result property="merchantname" column="merchantname"/>
-	    <result property="merchantInfos" column="merchant_infos"/>
-	    <result property="location" column="location"/>
+	    <result property="merId" column="merId"/>
+	    <result property="picId" column="picId"/>
+	    <result property="merName" column="mer_name"/>
+	    <result property="merInfo" column="mer_info"/>
+	    <result property="locationLong" column="location_long"/>
+	    <result property="locationLat" column="location_lat"/>
+	    <result property="dealHistory" column="deal_history"/>
     </resultMap>
 	
     <select id="getAll" resultMap="result">
@@ -17,28 +20,31 @@
     </select>
     
     <select id="getById" parameterType="int" resultMap="result">
-    	SELECT * FROM merchants WHERE id = #{id};
+    	SELECT * FROM merchants WHERE mer_id = #{merId};
   	</select>
     
     <delete id="deleteById" parameterType="int">
-    	DELETE from merchants WHERE id = #{id};
+    	DELETE from merchants WHERE mer_id = #{merId};
     </delete>
 
     <insert id="insert" parameterType="Merchants">
-    INSERT INTO merchants (merchantname, merchant_infos, location) 
-		VALUES (#{merchantname}, #{merchantInfos}, #{location});
+    INSERT INTO merchants (pic_id, mer_name, mer_info, location_long, location_lat, deal_history) 
+		VALUES (#{picId}, #{merName}, #{merInfo}, #{locationLong}, #{locationLat}, #{dealHistory});
       <selectKey keyProperty="id" resultType="int" order="AFTER">
-		select last_insert_id() as id
+		select last_insert_id() as mer_id
 	  </selectKey>
     </insert>
 
 	<update id="update" parameterType="Merchants">
 	  	UPDATE merchants
 		SET
-			merchantname = #{merchantname},
-			merhchant_infos = #{merchantInfos},
-			location = #{location},
-		WHERE id = #{id};
+			pic_id = #{picId},
+			mer_name = #{merName},
+			mer_info = #{merInfo},
+			location_long = #{locationLong},
+			location_lat = #{locationLat},
+			deal_history = #{dealHistory},
+		WHERE mer_id = #{merId};
 	</update>
 
 </mapper>
