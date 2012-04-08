@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="FavLocations">
+	
+	<resultMap id="result" type="FavLocations">
+		<result property="flId" column="fl_id"/>
+	    <result property="uId" column="u_id"/>
+	    <result property="locationName" column="location_name"/>
+	    <result property="locationLong" column="location_long"/>
+	    <result property="locationLat" column="location_lat"/>
+    </resultMap>
+	
+    <select id="getAll" resultMap="result">
+    	SELECT * FROM fav_locations; 
+    </select>
+    
+    <select id="getById" parameterType="int" resultMap="result">
+    	SELECT * FROM fav_locations WHERE fl_id = #{flId};
+  	</select>
+    
+    <delete id="deleteById" parameterType="int">
+    	DELETE FROM fav_locations WHERE fl_id = #{flId};
+    </delete>
+
+    <insert id="insert" parameterType="FavLocations">
+    INSERT INTO fav_locations (u_id, location_name, location_long, location_lat) 
+		VALUES (#{uId}, #{locationName}, #{locationLong}, #{locationLat});
+      <selectKey keyProperty="id" resultType="int" order="AFTER">
+		select last_insert_id() as fl_id
+	  </selectKey>
+    </insert>
+
+	<update id="update" parameterType="FavLocations">
+	  	UPDATE fav_locations
+		SET
+			u_id = #{uId},
+			location_name = #{locationName},
+			location_long = #{locationLong},
+			location_lat = #{locationLat},
+		WHERE fl_id = #{flId};
+	</update>
+
+</mapper>

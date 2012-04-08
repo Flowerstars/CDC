@@ -4,33 +4,36 @@
 package com.discount.DAO;
 
 import java.util.List;
-import com.discount.model.Users;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.discount.model.Categories;
+
 /**
- * @author haoranguan
+ * @author han
  *
  */
-public class UsersDAO {
-private SqlSessionFactory sqlSessionFactory; 
-	
-	public UsersDAO(){
+public class CategoriesDAO {
+	private SqlSessionFactory sqlSessionFactory;
+	/**
+	 * 
+	 */
+	public CategoriesDAO() {
 		sqlSessionFactory = MyBatisConnectionFactory.getSqlSessionFactory();
 	}
-	
 
 	/**
-	 * Returns the list of all User instances from the database.
-	 * @return the list of all User instances from the database.
+	 * Returns the list of all Picture instances from the database.
+	 * @return the list of all Picture instances from the database.
 	 */
 	@SuppressWarnings("unchecked")
-	public List<Users> selectAll(){
+	public List<Categories> selectAll(){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			List<Users> list = session.selectList("Users.getAll");
+			List<Categories> list = session.selectList("Categories.getAll");
 			return list;
 		} finally {
 			session.close();
@@ -42,13 +45,13 @@ private SqlSessionFactory sqlSessionFactory;
 	 * @param id primary key value used for lookup.
 	 * @return A Contact instance with a primary key value equals to pk. null if there is no matching row.
 	 */
-	public Users selectById(int id){
+	public Categories selectById(int id){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			Users user = (Users) session.selectOne("Users.getById",id);
-			return user;
+			Categories category = (Categories) session.selectOne("Categories.getById",id);
+			return category;
 		} finally {
 			session.close();
 		}
@@ -58,12 +61,12 @@ private SqlSessionFactory sqlSessionFactory;
 	 * Updates an instance of Contact in the database.
 	 * @param contact the instance to be updated.
 	 */
-	public void update(Users user){
+	public void update(Categories category){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			session.update("Users.update", user);
+			session.update("Categories.update", category);
 			session.commit();
 		} finally {
 			session.close();
@@ -74,12 +77,12 @@ private SqlSessionFactory sqlSessionFactory;
 	 * Insert an instance of Contact into the database.
 	 * @param contact the instance to be persisted.
 	 */
-	public void insert(Users user){
+	public void insert(Categories category){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			session.insert("Users.insert", user);
+			session.insert("Categories.insert", category);
 			session.commit();
 		} finally {
 			session.close();
@@ -90,15 +93,17 @@ private SqlSessionFactory sqlSessionFactory;
 	 * Delete an instance of Contact from the database.
 	 * @param id primary key value of the instance to be deleted.
 	 */
-	public void delete(int uId){
+	public void delete(int catId){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			session.delete("Users.deleteById", uId);
+			session.delete("Categories.deleteById", catId);
 			session.commit();
 		} finally {
 			session.close();
 		}
 	}
+
+	
 }

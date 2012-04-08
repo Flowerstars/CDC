@@ -9,10 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.discount.model.Categories;
+import com.discount.model.FavLocations;
 import com.discount.model.Merchants;
 import com.discount.model.Pictures;
 import com.discount.model.Users;
 import com.discount.model.Deals;
+import com.discount.DAO.CategoriesDAO;
+import com.discount.DAO.FavLocationsDAO;
 import com.discount.DAO.MerchantsDAO;
 import com.discount.DAO.PicturesDAO;
 import com.discount.DAO.UsersDAO;
@@ -83,6 +87,8 @@ public class TestServlet extends HttpServlet {
 			printAllDeals(out);
 			printAllMerchants(out);
 			printAllPictures(out);
+			printAllCategories(out);
+			printAllFavLocations(out);
 			
 			out.println("  </BODY>");
 			out.println("</HTML>");
@@ -149,6 +155,34 @@ public class TestServlet extends HttpServlet {
 		for (int i=0; i<allPictures.size(); i++){
 			out.println("Index "+ (i+1) +": ");
 			out.println(allPictures.get(i).toString());
+			out.println("<br />");
+		}
+		out.println("=============================================");
+		out.println("<br />");
+	}
+	
+	private void printAllCategories(PrintWriter out){
+		CategoriesDAO categoriesDAO = new CategoriesDAO();
+		List<Categories> allCategories = categoriesDAO.selectAll();	
+			
+		out.println("<h4>Categories:</h4>");
+		for (int i=0; i<allCategories.size(); i++){
+			out.println("Index "+ (i+1) +": ");
+			out.println(allCategories.get(i).toString());
+			out.println("<br />");
+		}
+		out.println("=============================================");
+		out.println("<br />");
+	}
+	
+	private void printAllFavLocations(PrintWriter out){
+		FavLocationsDAO favLocationsDAO = new FavLocationsDAO();
+		List<FavLocations> allFavLocations = favLocationsDAO.selectAll();	
+			
+		out.println("<h4>FavLocations:</h4>");
+		for (int i=0; i<allFavLocations.size(); i++){
+			out.println("Index "+ (i+1) +": ");
+			out.println(allFavLocations.get(i).toString());
 			out.println("<br />");
 		}
 		out.println("=============================================");

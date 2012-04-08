@@ -94,12 +94,12 @@ public class MerchantsDAO {
 	 * Delete an instance of Contact from the database.
 	 * @param id primary key value of the instance to be deleted.
 	 */
-	public void delete(int id){
+	public void delete(int merId){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			session.delete("Merchants.deleteById", id);
+			session.delete("Merchants.deleteById", merId);
 			session.commit();
 		} finally {
 			session.close();

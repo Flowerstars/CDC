@@ -4,51 +4,50 @@
 package com.discount.DAO;
 
 import java.util.List;
-import com.discount.model.Users;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.discount.model.FavLocations;
+
 /**
- * @author haoranguan
+ * @author han
  *
  */
-public class UsersDAO {
-private SqlSessionFactory sqlSessionFactory; 
-	
-	public UsersDAO(){
+public class FavLocationsDAO {
+	private SqlSessionFactory sqlSessionFactory;
+	/**
+	 * 
+	 */
+	public FavLocationsDAO() {
 		sqlSessionFactory = MyBatisConnectionFactory.getSqlSessionFactory();
 	}
-	
 
 	/**
-	 * Returns the list of all User instances from the database.
-	 * @return the list of all User instances from the database.
+	 * Returns the list of all favLocation instances from the database.
+	 * @return the list of all favLocation instances from the database.
 	 */
 	@SuppressWarnings("unchecked")
-	public List<Users> selectAll(){
+	public List<FavLocations> selectAll(){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			List<Users> list = session.selectList("Users.getAll");
+			List<FavLocations> list = session.selectList("FavLocations.getAll");
 			return list;
 		} finally {
 			session.close();
 		}
 	}
 
-	/**
-	 * Returns a Contact instance from the database.
-	 * @param id primary key value used for lookup.
-	 * @return A Contact instance with a primary key value equals to pk. null if there is no matching row.
-	 */
-	public Users selectById(int id){
+
+	public FavLocations selectById(int id){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			Users user = (Users) session.selectOne("Users.getById",id);
-			return user;
+			FavLocations favLocation = (FavLocations) session.selectOne("FavLocations.getById",id);
+			return favLocation;
 		} finally {
 			session.close();
 		}
@@ -58,12 +57,12 @@ private SqlSessionFactory sqlSessionFactory;
 	 * Updates an instance of Contact in the database.
 	 * @param contact the instance to be updated.
 	 */
-	public void update(Users user){
+	public void update(FavLocations favLocation){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			session.update("Users.update", user);
+			session.update("FavLocations.update", favLocation);
 			session.commit();
 		} finally {
 			session.close();
@@ -74,12 +73,12 @@ private SqlSessionFactory sqlSessionFactory;
 	 * Insert an instance of Contact into the database.
 	 * @param contact the instance to be persisted.
 	 */
-	public void insert(Users user){
+	public void insert(FavLocations favLocation){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			session.insert("Users.insert", user);
+			session.insert("FavLocations.insert", favLocation);
 			session.commit();
 		} finally {
 			session.close();
@@ -95,10 +94,12 @@ private SqlSessionFactory sqlSessionFactory;
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			session.delete("Users.deleteById", uId);
+			session.delete("FavLocations.deleteById", uId);
 			session.commit();
 		} finally {
 			session.close();
 		}
 	}
+	
+	
 }

@@ -6,13 +6,13 @@
 <mapper namespace="Merchants">
 	
 	<resultMap id="result" type="Merchants">
-	    <result property="merId" column="merId"/>
-	    <result property="picId" column="picId"/>
+	    <result property="merId" column="mer_id"/>
+	    <result property="picId" column="pic_id"/>
 	    <result property="merName" column="mer_name"/>
 	    <result property="merInfo" column="mer_info"/>
 	    <result property="locationLong" column="location_long"/>
 	    <result property="locationLat" column="location_lat"/>
-	    <result property="dealHistory" column="deal_history"/>
+	    <result property="dealHistory" column="deals_history"/>
     </resultMap>
 	
     <select id="getAll" resultMap="result">

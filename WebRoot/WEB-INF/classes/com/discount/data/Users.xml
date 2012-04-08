@@ -39,11 +39,11 @@
 	<update id="update" parameterType="Users">
 	  	UPDATE users
 		SET
-			userName = #{user_name},
+			user_name = #{userName},
 			password = #{password},
 			email = #{email},
-			locationLong = #{location_long},
-			locationLat = #{location_lat},
+			location_long = #{locationLong},
+			location_lat = #{locationLat},
 			notifications = #{notifications},
 		WHERE u_id = #{id};
 	</update>

@@ -19,10 +19,10 @@
   	</select>
     
     <delete id="deleteById" parameterType="int">
-    	DELETE from pictures WHERE pic_id = #{uId};
+    	DELETE from pictures WHERE pic_id = #{picId};
     </delete>
 
-    <insert id="insert" parameterType="Users">
+    <insert id="insert" parameterType="Pictures">
     INSERT INTO pictures (pic_link) 
 		VALUES (#{picLink});
       <selectKey keyProperty="id" resultType="int" order="AFTER">
@@ -30,7 +30,7 @@
 	  </selectKey>
     </insert>
 
-	<update id="update" parameterType="Users">
+	<update id="update" parameterType="Pictures">
 	  	UPDATE pictures
 		SET
 			pic_link = #{picLink},

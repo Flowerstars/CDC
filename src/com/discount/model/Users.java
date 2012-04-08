@@ -102,11 +102,11 @@ public class Users {
 		StringBuilder sb = new StringBuilder();
 		sb.append("u_id = ").append(uId).append(" - ");
 		sb.append("user_name = ").append(userName).append(" - ");
-		sb.append("Password = ").append(password).append(" - ");
-		sb.append("Email = ").append(email).append(" - ");
-		sb.append("Location = (").append(locationLong).append(", ").append(locationLat).append(")").append(" - ");
-		sb.append("Notifications = ").append(notifications).append(" - ");
-		sb.append("CreateAt = ").append(createAt);
+		sb.append("password = ").append(password).append(" - ");
+		sb.append("email = ").append(email).append(" - ");
+		sb.append("location = (").append(locationLong).append(", ").append(locationLat).append(")").append(" - ");
+		sb.append("notifications = ").append(notifications).append(" - ");
+		sb.append("createAt = ").append(createAt);
 		return sb.toString();
 	}
 	

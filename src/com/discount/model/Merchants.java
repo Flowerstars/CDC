@@ -94,8 +94,8 @@ public class Merchants {
 		sb.append("pic_id = ").append(picId).append(" - ");
 		sb.append("mer_name = ").append(merName).append(" - ");
 		sb.append("mer_info = ").append(merInfo).append(" - ");
-		sb.append("location_long = ").append(locationLong);
-		sb.append("location_lat = ").append(locationLat);
+		sb.append("location_long = ").append(locationLong).append(" - ");
+		sb.append("location_lat = ").append(locationLat).append(" - ");
 		sb.append("deal_history = ").append(dealHistory);
 		return sb.toString();
 	}
