@@ -28,7 +28,7 @@ import com.discount.DAO.DealsDAO;
 
 
 @SuppressWarnings("serial")
-public class TestServlet extends HttpServlet {
+public class DatabaseInfo extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
