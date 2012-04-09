@@ -12,6 +12,8 @@
 		<typeAlias alias="Pictures" type="com.discount.model.Pictures"/>
 		<typeAlias alias="Categories" type="com.discount.model.Categories"/>
 		<typeAlias alias="FavLocations" type="com.discount.model.FavLocations"/>
+		<typeAlias alias="MerchantsFollowed" type="com.discount.model.MerchantsFollowed"/>
+		<typeAlias alias="PreferenceTags" type="com.discount.model.PreferenceTags"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -33,6 +35,8 @@
   	   <mapper resource="com/discount/data/Pictures.xml"/>
   	   <mapper resource="com/discount/data/Categories.xml"/>
   	   <mapper resource="com/discount/data/FavLocations.xml"/>
+  	   <mapper resource="com/discount/data/MerchantsFollowed.xml"/>
+  	   <mapper resource="com/discount/data/PreferenceTags.xml"/>
     </mappers>
 
 </configuration>

@@ -41,12 +41,12 @@ public class FavLocationsDAO {
 	}
 
 
-	public FavLocations selectById(int id){
+	public FavLocations selectById(int flId){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			FavLocations favLocation = (FavLocations) session.selectOne("FavLocations.getById",id);
+			FavLocations favLocation = (FavLocations) session.selectOne("FavLocations.getById",flId);
 			return favLocation;
 		} finally {
 			session.close();
@@ -89,12 +89,12 @@ public class FavLocationsDAO {
 	 * Delete an instance of Contact from the database.
 	 * @param id primary key value of the instance to be deleted.
 	 */
-	public void delete(int uId){
+	public void delete(int flId){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			session.delete("FavLocations.deleteById", uId);
+			session.delete("FavLocations.deleteById", flId);
 			session.commit();
 		} finally {
 			session.close();

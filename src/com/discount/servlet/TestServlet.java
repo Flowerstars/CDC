@@ -12,13 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 import com.discount.model.Categories;
 import com.discount.model.FavLocations;
 import com.discount.model.Merchants;
+import com.discount.model.MerchantsFollowed;
 import com.discount.model.Pictures;
+import com.discount.model.PreferenceTags;
 import com.discount.model.Users;
 import com.discount.model.Deals;
 import com.discount.DAO.CategoriesDAO;
 import com.discount.DAO.FavLocationsDAO;
 import com.discount.DAO.MerchantsDAO;
+import com.discount.DAO.MerchantsFollowedDAO;
 import com.discount.DAO.PicturesDAO;
+import com.discount.DAO.PreferenceTagsDAO;
 import com.discount.DAO.UsersDAO;
 import com.discount.DAO.DealsDAO;
 
@@ -89,6 +93,8 @@ public class TestServlet extends HttpServlet {
 			printAllPictures(out);
 			printAllCategories(out);
 			printAllFavLocations(out);
+			printAllMerchantsFollowed(out);
+			printAllPreferenceTags(out);
 			
 			out.println("  </BODY>");
 			out.println("</HTML>");
@@ -183,6 +189,34 @@ public class TestServlet extends HttpServlet {
 		for (int i=0; i<allFavLocations.size(); i++){
 			out.println("Index "+ (i+1) +": ");
 			out.println(allFavLocations.get(i).toString());
+			out.println("<br />");
+		}
+		out.println("=============================================");
+		out.println("<br />");
+	}
+	
+	private void printAllMerchantsFollowed(PrintWriter out){
+		MerchantsFollowedDAO merchantsFollowedDAO = new MerchantsFollowedDAO();
+		List<MerchantsFollowed> allMerchantsFollowed = merchantsFollowedDAO.selectAll();	
+			
+		out.println("<h4>MerchantsFollowed:</h4>");
+		for (int i=0; i<allMerchantsFollowed.size(); i++){
+			out.println("Index "+ (i+1) +": ");
+			out.println(allMerchantsFollowed.get(i).toString());
+			out.println("<br />");
+		}
+		out.println("=============================================");
+		out.println("<br />");
+	}
+	
+	private void printAllPreferenceTags(PrintWriter out){
+		PreferenceTagsDAO preferenceTagsDAO = new PreferenceTagsDAO();
+		List<PreferenceTags> allPreferenceTags = preferenceTagsDAO.selectAll();	
+			
+		out.println("<h4>PreferenceTags:</h4>");
+		for (int i=0; i<allPreferenceTags.size(); i++){
+			out.println("Index "+ (i+1) +": ");
+			out.println(allPreferenceTags.get(i).toString());
 			out.println("<br />");
 		}
 		out.println("=============================================");

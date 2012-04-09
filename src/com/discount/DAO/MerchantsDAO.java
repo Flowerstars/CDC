@@ -46,12 +46,12 @@ public class MerchantsDAO {
 	 * @param id primary key value used for lookup.
 	 * @return A Contact instance with a primary key value equals to pk. null if there is no matching row.
 	 */
-	public Merchants selectById(int id){
+	public Merchants selectById(int merId){
 		
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			Merchants merchant = (Merchants) session.selectOne("Merchants.getById",id);
+			Merchants merchant = (Merchants) session.selectOne("Merchants.getById",merId);
 			return merchant;
 		} finally {
 			session.close();

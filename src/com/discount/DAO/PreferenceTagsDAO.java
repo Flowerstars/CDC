@@ -8,32 +8,27 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.discount.model.Categories;
+import com.discount.model.PreferenceTags;
 
 /**
  * @author han
  *
  */
-public class CategoriesDAO {
+public class PreferenceTagsDAO {
 	private SqlSessionFactory sqlSessionFactory;
-	/**
-	 * 
-	 */
-	public CategoriesDAO() {
+
+
+	public PreferenceTagsDAO() {
 		sqlSessionFactory = MyBatisConnectionFactory.getSqlSessionFactory();
 	}
 
-	/**
-	 * Returns the list of all Picture instances from the database.
-	 * @return the list of all Picture instances from the database.
-	 */
 	@SuppressWarnings("unchecked")
-	public List<Categories> selectAll(){
+	public List<PreferenceTags> selectAll(){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			List<Categories> list = session.selectList("Categories.getAll");
+			List<PreferenceTags> list = session.selectList("PreferenceTags.getAll");
 			return list;
 		} finally {
 			session.close();
@@ -45,13 +40,13 @@ public class CategoriesDAO {
 	 * @param id primary key value used for lookup.
 	 * @return A Contact instance with a primary key value equals to pk. null if there is no matching row.
 	 */
-	public Categories selectById(int catId){
+	public PreferenceTags selectById(int tagId){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			Categories category = (Categories) session.selectOne("Categories.getById",catId);
-			return category;
+			PreferenceTags preferenceTag = (PreferenceTags) session.selectOne("PreferenceTags.getById", tagId);
+			return preferenceTag;
 		} finally {
 			session.close();
 		}
@@ -61,12 +56,12 @@ public class CategoriesDAO {
 	 * Updates an instance of Contact in the database.
 	 * @param contact the instance to be updated.
 	 */
-	public void update(Categories category){
+	public void update(PreferenceTags preferenceTag){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			session.update("Categories.update", category);
+			session.update("PreferenceTags.update", preferenceTag);
 			session.commit();
 		} finally {
 			session.close();
@@ -77,12 +72,12 @@ public class CategoriesDAO {
 	 * Insert an instance of Contact into the database.
 	 * @param contact the instance to be persisted.
 	 */
-	public void insert(Categories category){
+	public void insert(PreferenceTags preferenceTag){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			session.insert("Categories.insert", category);
+			session.insert("PreferenceTags.insert", preferenceTag);
 			session.commit();
 		} finally {
 			session.close();
@@ -93,12 +88,12 @@ public class CategoriesDAO {
 	 * Delete an instance of Contact from the database.
 	 * @param id primary key value of the instance to be deleted.
 	 */
-	public void delete(int catId){
+	public void delete(int tagId){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			session.delete("Categories.deleteById", catId);
+			session.delete("PreferenceTags.deleteById", tagId);
 			session.commit();
 		} finally {
 			session.close();

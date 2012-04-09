@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MerchantsFollowed">
+	
+	<resultMap id="result" type="MerchantsFollowed">
+	    <result property="mfId" column="mf_id"/>
+	    <result property="uId" column="u_id"/>
+	    <result property="merId" column="mer_id"/>
+    </resultMap>
+	
+    <select id="getAll" resultMap="result">
+    	SELECT * FROM merchants_followed; 
+    </select>
+    
+    <select id="getById" parameterType="int" resultMap="result">
+    	SELECT * FROM merchants_followed WHERE mf_id = #{mfId};
+  	</select>
+    
+    <delete id="deleteById" parameterType="int">
+    	DELETE FROM merchants_followed WHERE mf_id = #{mfId};
+    </delete>
+
+    <insert id="insert" parameterType="MerchantsFollowed">
+    INSERT INTO merchants_followed (u_id, mer_id) 
+		VALUES (#{uId}, #{merId});
+      <selectKey keyProperty="id" resultType="int" order="AFTER">
+		select last_insert_id() as mf_id
+	  </selectKey>
+    </insert>
+
+	<update id="update" parameterType="MerchantsFollowed">
+	  	UPDATE merchants_followed
+		SET
+			u_id = #{uId},
+			mer_id = #{merId},
+			WHERE mf_id = #{mfId};
+	</update>
+
+</mapper>

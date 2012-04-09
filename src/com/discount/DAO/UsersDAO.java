@@ -42,12 +42,12 @@ private SqlSessionFactory sqlSessionFactory;
 	 * @param id primary key value used for lookup.
 	 * @return A Contact instance with a primary key value equals to pk. null if there is no matching row.
 	 */
-	public Users selectById(int id){
+	public Users selectById(int uId){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			Users user = (Users) session.selectOne("Users.getById",id);
+			Users user = (Users) session.selectOne("Users.getById", uId);
 			return user;
 		} finally {
 			session.close();

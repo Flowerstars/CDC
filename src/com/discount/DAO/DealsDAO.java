@@ -46,12 +46,12 @@ public class DealsDAO {
 	 * @param id primary key value used for lookup.
 	 * @return A Contact instance with a primary key value equals to pk. null if there is no matching row.
 	 */
-	public Deals selectById(int id){
+	public Deals selectById(int dealId){
 		
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			Deals deal = (Deals) session.selectOne("Deals.getById",id);
+			Deals deal = (Deals) session.selectOne("Deals.getById",dealId);
 			return deal;
 		} finally {
 			session.close();

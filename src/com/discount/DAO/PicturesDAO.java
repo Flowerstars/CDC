@@ -45,12 +45,12 @@ public class PicturesDAO {
 	 * @param id primary key value used for lookup.
 	 * @return A Contact instance with a primary key value equals to pk. null if there is no matching row.
 	 */
-	public Pictures selectById(int id){
+	public Pictures selectById(int picId){
 
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		try {
-			Pictures picture = (Pictures) session.selectOne("Pictures.getById",id);
+			Pictures picture = (Pictures) session.selectOne("Pictures.getById", picId);
 			return picture;
 		} finally {
 			session.close();
