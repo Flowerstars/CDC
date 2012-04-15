@@ -10,10 +10,131 @@
     <servlet-name>DatabaseInfo</servlet-name>
     <servlet-class>com.discount.servlet.DatabaseInfo</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Registration</servlet-name>
+    <servlet-class>com.discount.servlet.Registration</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.discount.servlet.Login</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>com.discount.servlet.Logout</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetDealsByCategories</servlet-name>
+    <servlet-class>com.discount.servlet.GetDealsByCategories</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetDealsBySearch</servlet-name>
+    <servlet-class>com.discount.servlet.GetDealsBySearch</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetDealsByMerchant</servlet-name>
+    <servlet-class>com.discount.servlet.GetDealsByMerchant</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetMerchantsBySearch</servlet-name>
+    <servlet-class>com.discount.servlet.GetMerchantsBySearch</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetMerchantsByLocation</servlet-name>
+    <servlet-class>com.discount.servlet.GetMerchantsByLocation</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetFavoriteLocation</servlet-name>
+    <servlet-class>com.discount.servlet.GetFavoriteLocation</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddFavoriteLocation</servlet-name>
+    <servlet-class>com.discount.servlet.AddFavoriteLocation</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddFollowedMerchant</servlet-name>
+    <servlet-class>com.discount.servlet.AddFollowedMerchant</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
 
   <servlet-mapping>
     <servlet-name>DatabaseInfo</servlet-name>
     <url-pattern>/DatabaseInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Registration</servlet-name>
+    <url-pattern>/Registration</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetDealsByCategories</servlet-name>
+    <url-pattern>/GetDealsByCategories</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetDealsBySearch</servlet-name>
+    <url-pattern>/GetDealsBySearch</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetDealsByMerchant</servlet-name>
+    <url-pattern>/GetDealsByMerchant</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetMerchantsBySearch</servlet-name>
+    <url-pattern>/GetMerchantsBySearch</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetMerchantsByLocation</servlet-name>
+    <url-pattern>/GetMerchantsByLocation</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetFavoriteLocation</servlet-name>
+    <url-pattern>/GetFavoriteLocation</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddFavoriteLocation</servlet-name>
+    <url-pattern>/AddFavoriteLocation</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddFollowedMerchant</servlet-name>
+    <url-pattern>/AddFollowedMerchant</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
