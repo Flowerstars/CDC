@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.discount.DAO.UsersDAO;
+import com.discount.model.Users;
+
 public class Registration extends HttpServlet {
 
 	/**
@@ -24,13 +27,20 @@ public class Registration extends HttpServlet {
 			throws ServletException, IOException {
 
 		/*
-		 * name: username, email, password, lat, long
+		 * name: username, email, password
 		 * return: [{"status":"", "reason":"[OK]", "data":""}]
 		 * status: 1:0 // success:failed  customized status codes 
 		 * reasons: username exist; ...
 		 * 
 		 */
-
+	  String userName = request.getParameter("userName");
+	  String passWord = request.getParameter("passWord");
+	  String email = request.getParameter("email");
+	  Users u = new Users(userName,passWord,email);
+	  UsersDAO userDAO = new UsersDAO();
+	  userDAO.insert(u);   //TODO, get UID
+	  
+	    
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");

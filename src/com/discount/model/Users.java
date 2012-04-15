@@ -13,22 +13,14 @@ public class Users {
 	private String userName;
 	private String password;
 	private String email;
-	private double locationLong;
-	private double locationLat;
 	private String notifications;
 	private String createAt;
 	
 	
-	public Users(int uId, String userName, String password, String email, double locationLong, double locationLat, String notifications, String createAt) {
-		super();
-		this.uId = uId;
+	public Users(String userName, String password, String email) {
 		this.userName = userName;
 		this.password = password;
 		this.email = email;
-		this.locationLong = locationLong;
-		this.locationLat = locationLat;
-		this.notifications = notifications;
-		this.createAt = createAt;
 	}
 	
 	public Users() {}
@@ -66,21 +58,6 @@ public class Users {
 		this.email = email;
 	}
 	
-	public double getLocationLong() {
-		return locationLong;
-	}
-	
-	public void setLocationLong(double locationLong) {
-		this.locationLong = locationLong;
-	}
-	
-	public double getLocationLat() {
-		return locationLat;
-	}
-	
-	public void setLocationLat(double locationLat) {
-		this.locationLat = locationLat;
-	}
 	
 	public String getNotifications() {
 		return notifications;
@@ -104,7 +81,6 @@ public class Users {
 		sb.append("user_name = ").append(userName).append(" - ");
 		sb.append("password = ").append(password).append(" - ");
 		sb.append("email = ").append(email).append(" - ");
-		sb.append("location = (").append(locationLong).append(", ").append(locationLat).append(")").append(" - ");
 		sb.append("notifications = ").append(notifications).append(" - ");
 		sb.append("createAt = ").append(createAt);
 		return sb.toString();
@@ -121,7 +97,6 @@ public class Users {
 		if (!this.email.equals(user.getEmail())){
 			return false;
 		}
-
 		return true;
 	}
 }
