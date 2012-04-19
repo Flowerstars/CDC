@@ -34,6 +34,9 @@ public class AddFollowedMerchant extends HttpServlet {
 		 * params_name: uid; mer_id // search by uid 
 		 * return: [{"status":"", "reason":"[OK]", "data":""}]..
 		 * 
+		 * request:  uId(s), merId
+		 * response: status
+		 * 
 		 */
 		
 		response.setContentType("text/html");

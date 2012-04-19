@@ -34,6 +34,9 @@ public class GetDealsByCategories extends HttpServlet {
 		 * params_name: categories ("food.seafood" OR "food.null")
 		 * return: [{"status":"", "reason":"[OK]", "data":""}]..
 		 * 
+		 * request: food.seafood|food.null
+		 * response: {'dealId':'', 'catId', 'merIdList', 'merName', 'picLink', 'title', 'value', 'price', 'discount', 'bought', 'dealInfo', 'startTime', 'EndTime'}
+		 * 
 		 */
 
 		response.setContentType("text/html");

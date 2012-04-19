@@ -29,6 +29,14 @@ public class Logout extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		/*
+		 * name: username, password
+		 * return: [{"status":"", "reason":"", "data":""}]
+		 * 
+		 * request: null
+		 * response: status (close a session)
+		 */
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();

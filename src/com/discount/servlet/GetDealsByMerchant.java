@@ -34,6 +34,8 @@ public class GetDealsByMerchant extends HttpServlet {
 		 * params_name: merchant_id // select from deals by mer_id
 		 * return: [{"status":"", "reason":"[OK]", "data":""}]..
 		 * 
+		 * request: merId
+		 * response: ***
 		 */
 		
 		response.setContentType("text/html");

@@ -34,6 +34,9 @@ public class GetFavoriteLocations extends HttpServlet {
 		 * params_name: user_id // search by uid 
 		 * return: [{"status":"", "reason":"[OK]", "data":""}]..
 		 * 
+		 * request: uId(session)
+		 * response: {favLocationId, locationName, lat, long}
+		 * 
 		 */
 		
 		response.setContentType("text/html");
