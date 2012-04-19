@@ -33,6 +33,8 @@ public class Login extends HttpServlet {
 		 * name: username, password
 		 * return: [{"status":"", "reason":"", "data":""}]
 		 * 
+		 * request: username, password
+		 * response: status (create a session, insert uId into session)
 		 */
 		
 		String A = request.getParameter("a");

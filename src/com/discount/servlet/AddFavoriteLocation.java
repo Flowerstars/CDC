@@ -34,7 +34,11 @@ public class AddFavoriteLocation extends HttpServlet {
 		 * params_name: uid; loc (loca_name:lat,long) // search by uid 
 		 * return: [{"status":"", "reason":"[OK]", "data":""}]..
 		 * 
+		 * request: uId(session), lat, long, locationName
+		 * response: [{"status":"1|0", "reason":"[OK|DB ERROR]", "data":""}]
 		 */
+		
+		
 		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();

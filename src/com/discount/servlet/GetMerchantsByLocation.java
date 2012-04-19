@@ -31,8 +31,12 @@ public class GetMerchantsByLocation extends HttpServlet {
 			throws ServletException, IOException {
 
 		/*
-		 * params_name: q ("location_name:null" OR "null:lat`long") // search by location like "keyword"
+		 * params_name: q (lat`long) // search by location like "keyword"
 		 * return: [{"status":"", "reason":"[OK]", "data":""}]..
+		 * 
+		 * 
+		 * request: lat, long, level(distance)
+		 * response: {'merId', merName, picLink, merAddr, merPhoneNumber, lat, long, cityId} 
 		 * 
 		 */
 		

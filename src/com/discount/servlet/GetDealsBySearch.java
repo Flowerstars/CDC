@@ -33,6 +33,9 @@ public class GetDealsBySearch extends HttpServlet {
 		 * params_name: q ("keyword") // search by deal_name like "keyword"
 		 * return: [{"status":"", "reason":"[OK]", "data":""}]..
 		 * 
+		 * request: keyword (search : 'dealInfo', 'title')
+ 		 * response: ***
+		 * 
 		 */
 		
 

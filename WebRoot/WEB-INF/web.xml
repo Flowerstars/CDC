@@ -76,6 +76,20 @@
     <servlet-name>AddFollowedMerchant</servlet-name>
     <servlet-class>com.discount.servlet.AddFollowedMerchant</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetMerchantsByIdList</servlet-name>
+    <servlet-class>com.discount.servlet.GetMerchantsByIdList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetDealsByMerchantId</servlet-name>
+    <servlet-class>com.discount.servlet.GetDealsByMerchantId</servlet-class>
+  </servlet>
+
+
 
 
 
@@ -135,6 +149,14 @@
   <servlet-mapping>
     <servlet-name>AddFollowedMerchant</servlet-name>
     <url-pattern>/AddFollowedMerchant</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetMerchantsByIdList</servlet-name>
+    <url-pattern>/GetMerchantsByIdList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetDealsByMerchantId</servlet-name>
+    <url-pattern>/GetDealsByMerchantId</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>

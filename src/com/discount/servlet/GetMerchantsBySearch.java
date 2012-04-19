@@ -33,6 +33,8 @@ public class GetMerchantsBySearch extends HttpServlet {
 		 * params_name: q ("keyword") // search by merchant_name like "keyword"
 		 * return: [{"status":"", "reason":"[OK]", "data":""}]..
 		 * 
+		 * request: keyword (search: merName)
+		 * response: ***
 		 */
 		
 		response.setContentType("text/html");
