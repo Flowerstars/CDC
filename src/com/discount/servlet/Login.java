@@ -34,6 +34,10 @@ public class Login extends HttpServlet {
 		 * return: [{"status":"", "reason":"", "data":""}]
 		 * 
 		 */
+		
+		String A = request.getParameter("a");
+		String B = request.getParameter("b");
+		
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
@@ -44,6 +48,9 @@ public class Login extends HttpServlet {
 		out.print("    This is ");
 		out.print(this.getClass());
 		out.println(", using the POST method");
+		
+		out.println("[request.getReader().readLine()]: " + request.getReader().readLine());
+		out.println("A = " + A + "   B = " + B);
 		out.println("  </BODY>");
 		out.println("</HTML>");
 		out.flush();
