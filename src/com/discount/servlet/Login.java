@@ -44,6 +44,7 @@ public class Login extends HttpServlet {
 		out.print("    This is ");
 		out.print(this.getClass());
 		out.println(", using the POST method");
+		out.println("request.getReader().readLine(): " + request.getReader().readLine());
 		out.println("  </BODY>");
 		out.println("</HTML>");
 		out.flush();

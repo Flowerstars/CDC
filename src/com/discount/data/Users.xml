@@ -28,7 +28,7 @@
     	DELETE from users WHERE U_id = #{uId};
     </delete>
 
-    <insert id="insert" parameterType="Users">
+    <insert id="insert" parameterType="Users" >
     INSERT INTO users (user_name, password, email) 
 		VALUES (#{userName}, #{password}, #{email});
     <selectKey keyProperty="id" resultType="int" order="AFTER">
