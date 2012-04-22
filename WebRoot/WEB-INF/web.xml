@@ -6,12 +6,12 @@
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	
   <servlet>
-    <description>[SONGHAN]: TEST for REST</description>
-    <servlet-name>Jersey REST Service</servlet-name>
-    <servlet-class>
-      com.sun.jersey.spi.container.servlet.ServletContainer
-    </servlet-class>
-    <load-on-startup>1</load-on-startup>
+    <display-name>[SONGHAN]: JAX-RS REST Servlet</display-name>
+  	<servlet-name>JAX-RS REST Servlet</servlet-name>
+  	<servlet-class>
+  		com.sun.jersey.spi.container.servlet.ServletContainer
+  	</servlet-class>
+  	<load-on-startup>1</load-on-startup>
   </servlet>
 	
   <servlet>
@@ -109,7 +109,7 @@
 
 
 
-
+  
   <servlet-mapping>
     <servlet-name>Jersey REST Service</servlet-name>
     <url-pattern>/rest/*</url-pattern>
