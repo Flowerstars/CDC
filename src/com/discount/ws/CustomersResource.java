@@ -11,9 +11,12 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
+import com.sun.jersey.spi.resource.Singleton;
+
 
 @Produces("application/xml")
 @Path("customers")
+@Singleton
 public class CustomersResource {
 
 	private TreeMap<Integer, Customer> customerMap = new TreeMap<Integer, Customer>();
