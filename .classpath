@@ -5,14 +5,13 @@
 	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.18-bin.jar"/>
 	<classpathentry kind="lib" path="lib/mybatis-3.1.0.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/activation-1.1.1.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/asm-3.3.1.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jaxb-api-2.2.4.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jaxb-impl-2.2.4-1.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jersey-client-1.12.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jersey-core-1.12.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jersey-json-1.12.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jersey-server-1.12.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/stax-api-1.0-2.jar"/>
+	<classpathentry kind="lib" path="lib/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-lgpl-0.9.4.jar"/>
+	<classpathentry kind="lib" path="lib/jersey-client-1.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jersey-core-1.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jersey-json-1.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jersey-server-1.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/jettison-1.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/jsr311-api-1.0.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
