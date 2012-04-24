@@ -97,7 +97,7 @@
   
  <servlet-mapping>
    <servlet-name>JAX-RS REST Servlet</servlet-name>
-   <url-pattern>/services/*</url-pattern>
+   <url-pattern>/ws/*</url-pattern>
  </servlet-mapping>
  <servlet-mapping>
   <servlet-name>DatabaseInfo</servlet-name>
