@@ -21,7 +21,7 @@
 		  <transactionManager type="JDBC"/>
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver"/>
-				<property name="url" value="jdbc:mysql://ec2-50-18-17-238.us-west-1.compute.amazonaws.com:3306/CDC"/>
+				<property name="url" value="jdbc:mysql://ec2-184-169-254-197.us-west-1.compute.amazonaws.com:3306/CDC"/>
 				<property name="username" value="root"/>
 				<property name="password" value="RooT"/>
 			</dataSource>
