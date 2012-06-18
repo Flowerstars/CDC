@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="Discount"
+  name="CDC"
   id="myeclipse.1332887185682"
   context-root="/Discount"
   j2ee-spec="5.0"
-  archive="Discount.war">
+  archive="CDC.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />
   </attributes>

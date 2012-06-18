@@ -21,5 +21,6 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jersey-server-1.0.3.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jettison-1.0.1.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jsr311-api-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mai/Documents/myeclipse_workspace/CDC/lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
