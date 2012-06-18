@@ -14,6 +14,7 @@
 		<typeAlias alias="FavLocations" type="com.discount.model.FavLocations"/>
 		<typeAlias alias="MerchantsFollowed" type="com.discount.model.MerchantsFollowed"/>
 		<typeAlias alias="PreferenceTags" type="com.discount.model.PreferenceTags"/>
+		<typeAlias alias="MerchantDealMap" type="com.discount.model.MerchantDealMap"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -21,7 +22,7 @@
 		  <transactionManager type="JDBC"/>
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver"/>
-				<property name="url" value="jdbc:mysql://ec2-50-18-17-238.us-west-1.compute.amazonaws.com:3306/CDC"/>
+				<property name="url" value="jdbc:mysql://ec2-184-169-254-197.us-west-1.compute.amazonaws.com:3306/CDC"/>
 				<property name="username" value="root"/>
 				<property name="password" value="RooT"/>
 			</dataSource>
@@ -37,6 +38,7 @@
   	   <mapper resource="com/discount/data/FavLocations.xml"/>
   	   <mapper resource="com/discount/data/MerchantsFollowed.xml"/>
   	   <mapper resource="com/discount/data/PreferenceTags.xml"/>
+  	   <mapper resource="com/discount/data/MerchantDealMap.xml"/>
     </mappers>
 
 </configuration>

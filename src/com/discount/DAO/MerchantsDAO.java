@@ -57,7 +57,20 @@ public class MerchantsDAO {
 			session.close();
 		}
 	}
-
+	
+	public String getMerchantNameById(int merId){
+		
+		SqlSession session = sqlSessionFactory.openSession();
+		
+		try {
+			String merchantName = (String) session.selectOne(
+					"Merchants.getMerchantNameById", merId);
+			return merchantName;
+		} finally {
+			session.close();
+		}
+	}
+	
 	/**
 	 * Updates an instance of Contact in the database.
 	 * @param contact the instance to be updated.

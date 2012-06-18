@@ -11,6 +11,7 @@ package com.discount.model;
 public class Pictures {
 	private int picId;
 	private String picLink;
+	private String smallPicLink;
 	
 	
 	public Pictures(int picId, String picLink) {
@@ -54,6 +55,14 @@ public class Pictures {
 		}
 
 		return true;
+	}
+
+	public String getPicSmallLink() {
+		return smallPicLink;
+	}
+
+	public void setPicSmallLink(String smallPicLink) {
+		this.smallPicLink = smallPicLink;
 	}
 
 }

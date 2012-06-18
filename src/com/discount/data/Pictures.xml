@@ -8,6 +8,7 @@
 	<resultMap id="result" type="Pictures">
 	    <result property="picId" column="pic_id"/>
 	    <result property="picLink" column="pic_link"/>
+	    <result property="smallPicLink" column="small_pic_link"/>
     </resultMap>
 	
     <select id="getAll" resultMap="result">

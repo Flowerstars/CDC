@@ -87,14 +87,14 @@ public class DatabaseInfo extends HttpServlet {
 			out.println("<BODY>");
 			out.println("<h2>Database Information:</h2>");
 			
-			printAllUsers(out);
+//			printAllUsers(out);
 			printAllDeals(out);
-			printAllMerchants(out);
-			printAllPictures(out);
-			printAllCategories(out);
-			printAllFavLocations(out);
-			printAllMerchantsFollowed(out);
-			printAllPreferenceTags(out);
+//			printAllMerchants(out);
+//			printAllPictures(out);
+//			printAllCategories(out);
+//			printAllFavLocations(out);
+//			printAllMerchantsFollowed(out);
+//			printAllPreferenceTags(out);
 			
 			out.println("  </BODY>");
 			out.println("</HTML>");

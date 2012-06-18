@@ -49,11 +49,12 @@ public class DealsDAO {
 	public Deals selectById(int dealId){
 		
 		SqlSession session = sqlSessionFactory.openSession();
-		
+		Deals deal = null;
 		try {
-			Deals deal = (Deals) session.selectOne("Deals.getById",dealId);
+			deal = (Deals) session.selectOne("Deals.getById",dealId);
 			return deal;
-		} finally {
+		}
+		finally {
 			session.close();
 		}
 	}

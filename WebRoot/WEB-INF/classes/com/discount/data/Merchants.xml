@@ -20,7 +20,11 @@
     </select>
     
     <select id="getById" parameterType="int" resultMap="result">
-    	SELECT * FROM merchants WHERE mer_id = #{merId};
+	SELECT * FROM merchants WHERE mer_id = #{merId};
+  	</select>
+    
+    <select id="getMerchantNameById" parameterType="int" resultType="String">
+    	SELECT mer_name FROM merchants WHERE mer_id = #{merId};
   	</select>
     
     <delete id="deleteById" parameterType="int">

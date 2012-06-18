@@ -16,6 +16,8 @@ public class Merchants {
 	private double locationLong;
 	private double locationLat;
 	private String dealHistory;
+	private String address;
+	private String tel;
 	
 	public Merchants(int merId, int picId, String merName, String merInfo, double locationLong, double locationLat, String dealHistory) {
 		super();
@@ -26,6 +28,7 @@ public class Merchants {
 		this.locationLong = locationLong;
 		this.locationLat = locationLat;
 		this.dealHistory = dealHistory;
+		this.address = address;
 	}
 	
 	public Merchants() {
@@ -115,5 +118,33 @@ public class Merchants {
 		}
 
 		return true;
+	}
+
+	/**
+	 * @return the address
+	 */
+	public String getAddress() {
+		return address;
+	}
+
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	/**
+	 * @return the tel
+	 */
+	public String getTel() {
+		return tel;
+	}
+
+	/**
+	 * @param tel the tel to set
+	 */
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
 }

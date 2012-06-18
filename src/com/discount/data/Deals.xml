@@ -10,14 +10,18 @@
 	    <result property="catId" column="cat_id"/>
 	    <result property="merId" column="mer_id"/>
 	    <result property="picId" column="pic_id"/>
-	    <result property="dealName" column="dea_lname"/>
+	    <result property="title" column="title"/>
 	    <result property="discount" column="discount"/>
 	    <result property="dealInfo" column="deal_info"/>
 	    <result property="createAt" column="created_at"/>
+	    <result property="value" column="value"/>
+	    <result property="price" column="price"/>
+	    <result property="startTime" column="start_time"/>
+	    <result property="endTime" column="end_time"/>
     </resultMap>
 	
     <select id="getAll" resultMap="result">
-    	SELECT * FROM deals; 
+    	SELECT * FROM deals limit 5; 
     </select>
     
     <select id="getById" parameterType="int" resultMap="result">

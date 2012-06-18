@@ -13,21 +13,31 @@ public class Deals {
 	private int catId;
 	private int merId;
 	private int picId;
-	private String dealName;
+	private String title;
 	private double discount;
 	private String dealInfo;
 	private String createAt;
+	private String value;
+	private String price;
+	private String startTime;
+	private String endTime;
 	
-	public Deals(int dealId, int catId, int merId, int picId, String dealName, double discount, String dealInfo, String createAt) {
+	public Deals(int dealId, int catId, int merId, int picId, String title,
+			double discount, String dealInfo, String createAt, String value,
+			String price, String startTime, String endTime) {
 		super();
 		this.dealId = dealId;
 		this.catId = catId;
 		this.merId = merId;
 		this.picId = picId;
-		this.dealName = dealName;
+		this.title = title;
 		this.discount = discount;
 		this.dealInfo = dealInfo;
 		this.createAt = createAt;
+		this.value = value;
+		this.price = price;
+		this.startTime = startTime;
+		this.endTime = endTime;
 	}
 	
 	public Deals() {
@@ -66,12 +76,12 @@ public class Deals {
 		this.picId = picId;
 	}
 	
-	public String getDealName() {
-		return dealName;
+	public String getTitle() {
+		return title;
 	}
 	
-	public void setDealName(String dealName) {
-		this.dealName = dealName;
+	public void setTitle(String title) {
+		this.title = title;
 	}	
 	
 	public double getDiscount() {
@@ -104,7 +114,7 @@ public class Deals {
 		sb.append("mer_id = ").append(merId).append(" - ");
 		sb.append("cat_id = ").append(catId).append(" - ");
 		sb.append("pic_id = ").append(picId).append(" - ");
-		sb.append("deal_name = ").append(dealName).append(" - ");
+		sb.append("title = ").append(title).append(" - ");
 		sb.append("discount = ").append(discount).append(" - ");
 		sb.append("deal_info = ").append(dealInfo).append(" - ");
 		sb.append("create_at = ").append(createAt);
@@ -122,7 +132,7 @@ public class Deals {
 		if (this.catId != deal.getCatId()){
 			return false;
 		}
-		if (this.dealName.equals(deal.getDealName())){
+		if (this.title.equals(deal.getTitle())){
 			return false;
 		}
 		if (this.discount != deal.getDiscount()){
@@ -130,6 +140,38 @@ public class Deals {
 		}
 
 		return true;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 }

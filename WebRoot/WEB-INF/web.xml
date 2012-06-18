@@ -93,6 +93,34 @@
   <servlet-name>GetDealsByMerchantId</servlet-name>
   <servlet-class>com.discount.servlet.GetDealsByMerchantId</servlet-class>
  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>test</servlet-name>
+    <servlet-class>com.discount.servlet.test</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetDealById</servlet-name>
+    <servlet-class>com.discount.servlet.GetDealById</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetDealsById</servlet-name>
+    <servlet-class>com.discount.servlet.GetDealsById</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetAllDeals</servlet-name>
+    <servlet-class>com.discount.servlet.GetAllDeals</servlet-class>
+  </servlet>
+
+
+
+
 
   
  <servlet-mapping>
@@ -155,6 +183,22 @@
   <servlet-name>GetDealsByMerchantId</servlet-name>
   <url-pattern>/GetDealsByMerchantId</url-pattern>
  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>test</servlet-name>
+    <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetDealById</servlet-name>
+    <url-pattern>/GetDealById</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetDealsById</servlet-name>
+    <url-pattern>/GetDealsById</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetAllDeals</servlet-name>
+    <url-pattern>/GetAllDeals</url-pattern>
+  </servlet-mapping>
  <welcome-file-list>
   <welcome-file>index.jsp</welcome-file>
  </welcome-file-list>
